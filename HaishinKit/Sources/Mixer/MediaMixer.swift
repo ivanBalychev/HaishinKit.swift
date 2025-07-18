@@ -196,6 +196,10 @@ public final actor MediaMixer {
         try configuration(unit)
     }
 
+    public func currentSession() -> AVCaptureSession {
+        return self.session.session
+    }
+
     #if os(iOS) || os(macOS) || os(tvOS)
     /// Attaches an audio device.
     ///
