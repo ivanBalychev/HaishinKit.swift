@@ -225,6 +225,7 @@ public struct AudioCodecSettings: Codable, Sendable {
         if channelMap != oldValue?.channelMap, let newChannelMap = validatedChannelMap(converter) {
             converter.channelMap = newChannelMap
         }
+        converter.bitRateStrategy = AVAudioBitRateStrategy_Constant
     }
 
     private func validatedChannelMap(_ converter: AVAudioConverter) -> [NSNumber]? {
